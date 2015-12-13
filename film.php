@@ -1,3 +1,5 @@
+
+
 <?php
 include('uitls/simple_html_dom.php');
 echo"<!DOCTYPE html>"
@@ -27,8 +29,13 @@ else {
 		$link = "";
 		$title = "";
 		foreach ($result[$i]->find('a') as $e) {
-			$link = $e->href;
+			$tem = $e->href;
 			$title = $e->title;
+
+			$e->href=str_replace("download.php","sendmail.php",$tem);
+			$link = $e->href;
+			// $e->href =str_replace("download.php","sendmail.php",$link1)
+
 		}
 //		$link = str_replace("/download.php?","",$link);
 		echo "<a class=\"navigate-right\" data-transition=\"slide-in\" href=\"bridge.html?link=$link\">";

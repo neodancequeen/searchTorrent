@@ -1,39 +1,58 @@
 <?php
 include('uitls/simple_html_dom.php');
 
-	$murl=$_GET['link'];
-	$temp=$_GET['temp'];
-	$id=$_GET['id'];
-	$uhash=$_GET['uhash'];
-	$data=$murl."&temp=".$temp."&id=".$id."&uhash=".$uhash;
+	// $temp=$_GET['temp'];
+	// $n=$_GET['n'];
+	// $id=$_GET['id'];
+	// $uhash=$_GET['uhash'];
+	// $data=$murl."?n=".$n."&temp=".$temp."&id=".$id."&uhash=".$uhash;
+	echo '<meta http-equiv="content-type" content="text/html; charset=utf-8"/>';
+	
+	
+	//$full_url=str_replace("memoryofmovie.cn-hangzhou.aliapp.com","www.bttiantang.com",curPageURL());
+	$full_url=str_replace("localhost/searchTorrent","www.bttiantang.com",curPageURL());
+	 $html=file_get_html($full_url);
 
-	echo"<!DOCTYPE html>"
-		. "   <meta charset=\"utf-8\">"
-		. "   <title>Ratchet template page</title>"
-		. "   <meta name=\"viewport\" content=\"initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui\">"
-		. "   <meta name=\"apple-mobile-web-app-capable\" content=\"yes\">"
-		. "   <meta name=\"apple-mobile-web-app-status-bar-style\" content=\"black\">"
-		. "   <link href=\"css/ratchet.min.css\" rel=\"stylesheet\">"
-		. "   <link href=\"css/app.css\" rel=\"stylesheet\">"
-		. "   <link href=\"css/index.css\" rel=\"stylesheet\">"
-		. "   <script src=\"javaScript/ratchet.min.js\"></script>"
-		. "   <div class=\"content\">"
-		. "   <ul class=\"table-view\">"
-		. "       <li class=\"table-view-cell table-view-divider\">Download torrents</li>";
+	 echo 	"<table width=\"620\" align=\"center\" cellpadding=\"0\" cellspacing=\"5\" bgcolor=\"#f4f4f4\" style=\"border:1px solid #dcdcdc; margin-top:5px\">"
+  				."<tbody><tr>"
+    			."<td width=\"300\" height=\"250\" align=\"center\" bgcolor=\"#FFFFFF\">";
+		    
+		    foreach($html->find('form') as $e){
+							
+						    $result =$e->action; 
+						    $e->action="http://www.bttiantang.com".$result; 		   
+						}
+							$result=$html->find('div[style=position:relative]'); 	
+			foreach ($result as $key => $value) {
+				echo $value;
+			}
 
-	echo"<div class=\"card\">"
-		. "       <form class=\"form1\" method=\"post\" role=\"search\" action=\"send.php\">"
-		. "			  <input class=\"text1\" type=\"text\" name=\"email\">"
-		. "           <input class=\"text1\" type=\"hidden\" name=\"url\" placeholder=\"Input movie name\" value=\";
-						http://www.bttiantang.com$data\";>"
-		. "           <button class=\"btn btn-positive\" value=\"发送\" name=\"send\">"
-		. "               send"
-		. "           </button>"
-		. "       </form>"
-		. "   </div>";
+    echo "</form></div></td>"
+    	."<td width=\"300\" height=\"250\" align=\"center\" bgcolor=\"#FFFFFF\">"
+    	."<h3>Past Movies</h3>"
+    	."<img src=\"qrcode.jpg\"  alt=\"二维码\" width=\"300\" height=\"250\" align=\"center\"/>"
+		. "扫描二维码关注我们微信公众号"
+		. "</td></tr></tbody></table>";
 
-echo "   </ul>"
-. "</div>"
-. "</html>";
+	
 
+	function curPageURL() 
+	{
+	    $pageURL = 'http';
+
+	  
+	    $pageURL .= "://";
+
+	    if ($_SERVER["SERVER_PORT"] != "80") 
+	    {
+	        $pageURL .= $_SERVER["SERVER_NAME"] . ":" . $_SERVER["SERVER_PORT"] . $_SERVER["REQUEST_URI"];
+	    } 
+	    else 
+	    {
+	        $pageURL .= $_SERVER["SERVER_NAME"] . $_SERVER["REQUEST_URI"];
+	    }
+	    return $pageURL;
+	}
 ?>
+
+</html>
