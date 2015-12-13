@@ -1,0 +1,29 @@
+.card {
+    margin: 10px;
+    overflow: hidden;
+    background-color: white;
+    border: 0 solid #ddd;
+    border-radius: 0;
+}
+.card .form1 .text1{
+     width: 80%;
+     height: 35px;
+     -webkit-appearance: none;
+     padding: 0 0;
+     margin-bottom: 15px;
+     line-height: 21px;
+     background-color: #fff;
+     border: 1px solid #ddd;
+     border-radius: 0;
+     outline: none;
+}
+.card .form1 .btn-positive {
+    color: #fff;
+    background-color: rgba(25, 130, 32, 0.43);
+    border: 0 solid #5cb85c;
+    border-radius: 20px;
+    height: 33px;
+    width: 18%;
+    padding: 0 0;
+}
+

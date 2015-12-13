@@ -1,0 +1,26 @@
+.container{
+    width: 568px;
+    height: 824px;
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+.container .navbar-form {
+    width: 500px;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.container .navbar-form .form-control{
+    width: 400px;;
+}
+
+.container .navbar-form .btn{
+    width: 60PX;
+}
+
+
+.icon-1 {
+    background-image: url('../fonts/glyphicons/png/glyphicons-50-star.png');
+}
