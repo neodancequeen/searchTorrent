@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 include('uitls/simple_html_dom.php');
 
 	// $temp=$_GET['temp'];
@@ -9,8 +9,8 @@ include('uitls/simple_html_dom.php');
 	echo '<meta http-equiv="content-type" content="text/html; charset=utf-8"/>';
 	
 	
-	//$full_url=str_replace("memoryofmovie.cn-hangzhou.aliapp.com","www.bttiantang.com",curPageURL());
-	$full_url=str_replace("localhost/searchTorrent","www.bttiantang.com",curPageURL());
+	$full_url=str_replace("memoryofmovie.cn-hangzhou.aliapp.com/searchTorrent","www.bttiantang.com",curPageURL());
+	//$full_url=str_replace("localhost/searchTorrent","www.bttiantang.com",curPageURL());
 	 $html=file_get_html($full_url);
 
 	 echo 	"<table width=\"620\" align=\"center\" cellpadding=\"0\" cellspacing=\"5\" bgcolor=\"#f4f4f4\" style=\"border:1px solid #dcdcdc; margin-top:5px\">"
