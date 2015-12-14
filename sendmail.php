@@ -22,6 +22,7 @@ include('uitls/simple_html_dom.php');
 		. "       <li class=\"table-view-cell table-view-divider\">Download torrents</li>";
 
 	echo"<div class=\"card\">"
+		. "<br>请输入您的邮箱，我们会把种子的下载地址发送到您的邮箱！</br>"
 		. "       <form class=\"form1\" method=\"post\" role=\"search\" action=\"send.php\">"
 		. "			  <input class=\"text1\" type=\"text\" name=\"email\">"
 		. "           <input class=\"text1\" type=\"hidden\" name=\"url\" placeholder=\"Input movie name\" value=\";
