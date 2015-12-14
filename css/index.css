@@ -27,3 +27,10 @@
     padding: 0 0;
 }
 
+.logoImg {
+    display: block;
+    margin-left: 10px;
+    width: 275px;
+    height: 125px;
+}
+

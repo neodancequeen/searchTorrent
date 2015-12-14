@@ -7,9 +7,8 @@ include('uitls/simple_html_dom.php');
 	// $uhash=$_GET['uhash'];
 	// $data=$murl."?n=".$n."&temp=".$temp."&id=".$id."&uhash=".$uhash;
 	echo '<meta http-equiv="content-type" content="text/html; charset=utf-8"/>';
-	
-	
-	$full_url=str_replace("memoryofmovie.cn-hangzhou.aliapp.com/searchTorrent","www.bttiantang.com",curPageURL());
+
+	$full_url=str_replace("memoryofmovie.cn-hangzhou.aliapp.com:/searchTorrent","www.bttiantang.com",curPageURL());
 	//$full_url=str_replace("localhost/searchTorrent","www.bttiantang.com",curPageURL());
 	 $html=file_get_html($full_url);
 
