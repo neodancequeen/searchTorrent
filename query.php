@@ -1,5 +1,6 @@
 <?php
 include('uitls/simple_html_dom.php');
+include('cLog.php');
 echo"<!DOCTYPE html>"
 		. "   <meta charset=\"utf-8\">"
 		. "   <title>电影搜索</title>"
@@ -64,4 +65,6 @@ echo     "   </ul>"
 		. "</div>"
 		. "</html>"
 		."";
+		$log = new Log('log');
+		$log->writeLog($name);
 ?>
