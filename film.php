@@ -2,6 +2,8 @@
 
 <?php
 include('uitls/simple_html_dom.php');
+$url = $_GET['link'];
+$name = $_GET['name'];
 echo"<!DOCTYPE html>"
 		. "   <meta charset=\"utf-8\">"
 		. "   <title>电影搜索</title>"
@@ -13,9 +15,11 @@ echo"<!DOCTYPE html>"
 		. "   <script src=\"javaScript/ratchet.min.js\"></script>"
 		. "   <div class=\"content\">"
 		. "   <ul class=\"table-view\">"
-		. "       <li class=\"table-view-cell table-view-divider\">Recommended torrents</li>";
+		. "       <li class=\"table-view-cell table-view-divider\">";
+echo $name;
+echo ":下载地址";
+echo "</li>";
 
-$url=$_GET['link'];
 if($url == "undefined"){
 	echo("<h1>没有找到相关资源请重试</h1>");
 	echo"<br />\n";
@@ -38,7 +42,7 @@ else {
 
 		}
 //		$link = str_replace("/download.php?","",$link);
-		echo "<a class=\"navigate-right\" data-transition=\"slide-in\" href=\"bridge.html?link=$link\">";
+		echo "<a class=\"navigate-right\" data-transition=\"slide-in\" href=\"bridge.html?link=$link&name=$name\">";
 		echo "<img class=\"media-object pull-left\" src=\"torrent.gif\"  alt='image/nofound' /> "
 				. "<div class=\"media-body\">";
 		echo $title;

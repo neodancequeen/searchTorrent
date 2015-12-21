@@ -34,10 +34,17 @@ if ($_POST['search']) {
 			echo "<li class=\"table-view-cell media\">";
 			$douban = $cell[$i]->find('p[class=rt]');
 			$title = $cell[$i]->find('p[class=tt cl]');
+			$titleA = $title[0]->find('a');
+			$titleB = $titleA[0]->find('b');
+			$titleC = $titleB[0]->outertext;
+			$index = stripos($titleC,"<i>");
+			$substr = substr($titleC,0,$index);
+			$substr1 = strip_tags($substr);
+
 			foreach ($title as $key => $value) {
 				foreach ($value->find('a') as $key => $value1) {
 					$link = $value1->href;
-					echo "<a class=\"navigate-right\" data-transition=\"slide-in\" href=\"film.php?link=$link\">";
+					echo "<a class=\"navigate-right\" data-transition=\"slide-in\" href=\"film.php?link=$link&name=$substr1\">";
 				}
 			}
 			foreach ($cell[$i]->find('img') as $key => $img) {

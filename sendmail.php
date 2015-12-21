@@ -1,6 +1,7 @@
 <?php
 include('uitls/simple_html_dom.php');
 
+	$name=$_GET['name'];
 	$murl=$_GET['link'];
 	$temp=$_GET['temp'];
 	$id=$_GET['id'];
@@ -19,14 +20,17 @@ include('uitls/simple_html_dom.php');
 		. "   <script src=\"javaScript/ratchet.min.js\"></script>"
 		. "   <div class=\"content\">"
 		. "   <ul class=\"table-view\">"
-		. "       <li class=\"table-view-cell table-view-divider\">Download torrents</li>";
+		. "       <li class=\"table-view-cell table-view-divider\">";
+	echo $name;
+	echo ":下载地址";
+	echo"</li>";
 
 	echo"<div class=\"card\">"
 		. "<br>请输入您的邮箱，我们会把种子的下载地址发送到您的邮箱！</br>"
 		. "       <form class=\"form1\" method=\"post\" role=\"search\" action=\"send.php\">"
 		. "			  <input class=\"text1\" type=\"text\" name=\"email\">"
-		. "           <input class=\"text1\" type=\"hidden\" name=\"url\" placeholder=\"Input movie name\" value=\";
-						http://memoryofmovie.cn-hangzhou.aliapp.com/searchTorrent$data\";>"
+		. "           <input class=\"text1\" type=\"hidden\" name=\"url\" placeholder=\"Input movie name\" value=\"
+						http://past-moies.elasticbeanstalk.com/searchTorrent$data\">"
 		. "           <button class=\"btn btn-positive\" value=\"发送\" name=\"send\">"
 		. "               send"
 		. "           </button>"
