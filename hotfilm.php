@@ -32,16 +32,17 @@ $url = "http://www.bttiantang.com/";
        $tit = $result[$i]->find('div[class=tit]');
        $link = $imageA[0]->href;
        $imgUrl = $img[0]->src;
-       echo "<li class=\"table-view-cell media\">";
-       echo "<a class=\"navigate-right\" data-transition=\"slide-in\" href=\"$link\">";
-       echo "<img class=\"media-object pull-left\" src=$imgUrl  alt='image/nofound'/> "
-           . "<div class=\"media-body\">";
-
        $pfa = $tit[0]->find('a');
        $name = strip_tags($pfa[0]->outertext);
        $allname = strip_tags($tit[0]->outertext);
        $allname1 = str_replace($name, "", $allname);
        $allname2 = str_replace(" ", "", $allname1);
+       echo "<li class=\"table-view-cell media\">";
+       echo "<a class=\"navigate-right\" data-transition=\"slide-in\" href=\"$link&name=$name\">";
+       echo "<img class=\"media-object pull-left\" src=$imgUrl  alt='image/nofound'/> "
+           . "<div class=\"media-body\">";
+
+
        echo $name;
        echo "<br><br>";
        echo "豆瓣评分：";

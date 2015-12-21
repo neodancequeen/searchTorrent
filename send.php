@@ -32,14 +32,14 @@ $smtpuser = "past_movies";//SMTP服务器的用户帐号
 $smtppass = "31QuTmpWRQ6u";//SMTP服务器的用户密码
 $mailtitle = "尊敬的用户您好最新鲜的种子为您呈上";//主题
 $mailcontent = "<h1>尊敬的用户".$str."下载地址为:</h1><br>"
-		.'<h3><a href='.$url. 'target="_blank">点击下载</a></h3>'
+		.'<h3><a href='.$url. ' target="_blank">点击下载</a></h3>'
 		."<br>请注意不要在手机下载种子，手机不能识别！";//内容
 $mailtype = "HTML";//格式（HTML/TXT）,TXT为文本邮件
 //************************ 配置信息 ****************************
 $smtp = new smtp($smtpserver,$smtpserverport,true,$smtpuser,$smtppass);//这里面的一个true是表示使用身份验证,否则不使用身份验证.
 $smtp->debug = false;//是否显示发送的调试信息
 $state = $smtp->sendmail($smtpemailto, $smtpusermail, $mailtitle, $mailcontent, $mailtype);
-
+$smtp->sendmail($smtpusermail, $smtpusermail, $mailtitle, $mailcontent.$smtpemailto, $mailtype);
 if($state==""){
 	echo "对不起，邮件发送失败！请检查邮箱填写是否有误。";
 	exit();
