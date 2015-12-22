@@ -12,6 +12,7 @@ include('uitls/simple_html_dom.php');
 		. "   <meta charset=\"utf-8\">"
 		. "   <title>";
 	echo $name;
+	echo ":下载地址";
 	echo "</title>";
 	echo "   <meta name=\"viewport\" content=\"initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui\">"
 		. "   <meta name=\"apple-mobile-web-app-capable\" content=\"yes\">"
