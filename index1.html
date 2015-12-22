@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>电影搜索</title>
+
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <link href="css/ratchet.css" rel="stylesheet">
+
+    <link href="css/index.css" rel="stylesheet">
+
+    <script src="javaScript/ratchet.js"></script>
+</head>
+<body>
+
+<!-- Make sure all your bars are the first things in your <body> -->
+<header class="bar bar-nav">
+    <h1 class="title">电影搜索(Beta版)</h1>
+</header>
+
+<!-- Wrap all non-bar HTML in the .content div (this is actually what scrolls) -->
+<div class="content">
+    <div class="card">
+        <img class="logoImg" src="image/logo.png">
+        <form class="form1" method="post" role="search" action="query.php">
+            <input class="text1" type="text" name="name1" placeholder="影片名/明星/导演/地区/年代/imdb">
+            <button class="btn btn-positive" value="search" name="search">
+                search
+            </button>
+        </form>
+    </div>
+    <div class="bar bar-standard bar-footer-secondary">
+        <button class="btn" onclick="window.location.href='newfilm.php'">最新下载</button>
+        <button class="btn" onclick="window.location.href='hotfilm.php'">火热下载</button>
+        <br><br>
+    </div>
+
+</div>
+
+
+</body>
+</html>
