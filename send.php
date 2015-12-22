@@ -3,7 +3,7 @@ require_once "uitls/email.class.php";
 
 echo"<!DOCTYPE html>"
 		. "   <meta charset=\"utf-8\">"
-		. "   <title>Ratchet template page</title>"
+		. "   <title>电影下载</title>"
 		. "   <meta name=\"viewport\" content=\"initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui\">"
 		. "   <meta name=\"apple-mobile-web-app-capable\" content=\"yes\">"
 		. "   <meta name=\"apple-mobile-web-app-status-bar-style\" content=\"black\">"
