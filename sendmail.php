@@ -10,8 +10,10 @@ include('uitls/simple_html_dom.php');
 
 	echo"<!DOCTYPE html>"
 		. "   <meta charset=\"utf-8\">"
-		. "   <title>电影搜索</title>"
-		. "   <meta name=\"viewport\" content=\"initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui\">"
+		. "   <title>";
+	echo $name;
+	echo "</title>";
+	echo "   <meta name=\"viewport\" content=\"initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui\">"
 		. "   <meta name=\"apple-mobile-web-app-capable\" content=\"yes\">"
 		. "   <meta name=\"apple-mobile-web-app-status-bar-style\" content=\"black\">"
 		. "   <link href=\"css/ratchet.min.css\" rel=\"stylesheet\">"
